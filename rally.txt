@@ -1,0 +1,57 @@
+//Reducer
+const reducer = (state = [], action)=>{ //function rerurn an array
+	if(action.type === 'split_string'){
+    state.push = action.payload.split('')
+  	return action.payload.split('');
+  }
+  else if(action.type === 'add_char'){
+  	return	[...state, action.payload]  //make a new array [  ] and get all of elem on current state elem and add action.payload last elem
+  }
+  return state;
+};
+
+
+//Store
+//contains one reducer. from Red
+const store = Redux.createStore(reducer); //contains application state
+
+//State.
+//Reducer Produced. from Store
+store.getState() // reducer havind state
+
+
+//Action
+//action is plain js oject. to Reducer 
+// tell the reducer to a specific type
+const action = { type: 'split_string', 
+               		payload: 'asdf'} //data
+
+					
+					const action2 = {
+	type: 'add_char',
+  payload: 'a'
+}
+
+
+//pushing action into reducer
+store.dispatch(action) //the action will send to all of the reducers in our application
+store.dispatch(action2)
+store.getState()
+
+
+
+
+<Provider > hav eonly one child 
+
+Reducers : giving Data #state to our applications
+State : different types of states
+
+
+TouchableWithoutFeedback : like yes we have recieved your touch
+
+
+
+
+Application :  Redux
+apps code when get complecated 
+many pieces of data 
